@@ -7,7 +7,7 @@ using System;
 using System.Configuration;
 using System.Threading.Tasks;
 
-namespace Tests
+namespace BizLogic.IntegrationTests
 {
     [TestFixture]
     public class CreateCompanyRequestTest

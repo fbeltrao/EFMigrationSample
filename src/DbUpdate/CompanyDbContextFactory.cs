@@ -7,7 +7,9 @@ namespace DbUpdate
     /// <summary>
     /// Add-Migration 0001Initial -StartupProject DbUpdate -Project DbUpdate -Context CompanyDbContext
     /// dotnet ef migrations add 0001Initial --context CompanyDbContext
+    /// 
     /// Update-Database -StartupProject DbUpdate -Context CompanyDbContext
+    /// dotnet ef database update --context CompanyDbContext --startup-project DbUpdate
     /// 
     /// Tool to manage local sql: sqllocaldb info
     /// 
