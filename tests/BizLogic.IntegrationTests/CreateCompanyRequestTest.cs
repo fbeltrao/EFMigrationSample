@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace Tests
 {
+    [TestFixture]
     public class CreateCompanyRequestTest
     {
         private readonly string connectionString;
