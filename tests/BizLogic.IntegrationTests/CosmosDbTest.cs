@@ -29,21 +29,29 @@ namespace BizLogic.IntegrationTests
             if (string.IsNullOrWhiteSpace(authKey))
                 authKey = ConfigurationManager.AppSettings["CosmosDbAuthKey"];
 
-            this.documentClient = new DocumentClient(new Uri(endpoint), authKey, new ConnectionPolicy()
+            try
             {
-                ConnectionProtocol = Protocol.Tcp,
-                ConnectionMode = ConnectionMode.Direct,
-            });
 
-            await documentClient.CreateDatabaseIfNotExistsAsync(new Database()
-            {
-                Id = DatabaseId,
-            });
+                this.documentClient = new DocumentClient(new Uri(endpoint), authKey, new ConnectionPolicy()
+                {
+                    ConnectionProtocol = Protocol.Tcp,
+                    ConnectionMode = ConnectionMode.Direct,
+                });
 
-            await documentClient.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri(DatabaseId), new DocumentCollection
+                await documentClient.CreateDatabaseIfNotExistsAsync(new Database()
+                {
+                    Id = DatabaseId,
+                });
+
+                await documentClient.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri(DatabaseId), new DocumentCollection
+                {
+                    Id = CompaniesCollectionId,
+                });
+            }
+            catch (Exception ex)
             {
-                Id = CompaniesCollectionId,
-            });
+                throw new Exception($"Failed to setup CosmosDb for tests. Endpoint: '{endpoint}', AuthKey: '{authKey}'", ex);
+            }
         }
 
         [Test]
