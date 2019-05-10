@@ -21,13 +21,13 @@ namespace BizLogic.IntegrationTests
         [OneTimeSetUp]
         public async Task SetupDatabase()
         {
-            var endpoint = Environment.GetEnvironmentVariable("CosmosDbEmulator.Endpoint");
+            var endpoint = Environment.GetEnvironmentVariable("CosmosDbEmulatorEndpoint");
             if (string.IsNullOrWhiteSpace(endpoint))
                 endpoint = ConfigurationManager.AppSettings["CosmosDbEndpoint"];
 
-            var authKey = Environment.GetEnvironmentVariable("CosmosDbEmulator.Authkey");
-            if (string.IsNullOrWhiteSpace(authKey))
-                authKey = ConfigurationManager.AppSettings["CosmosDbAuthKey"];
+            // var authKey = Environment.GetEnvironmentVariable("CosmosDbEmulator.Authkey");
+            // if (string.IsNullOrWhiteSpace(authKey))
+            var authKey = ConfigurationManager.AppSettings["CosmosDbAuthKey"];
 
             try
             {
