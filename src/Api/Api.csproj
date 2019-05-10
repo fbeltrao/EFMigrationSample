@@ -14,9 +14,5 @@
   <ItemGroup>
     <ProjectReference Include="..\BizLogic\BizLogic.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-  </ItemGroup>
   
 </Project>
