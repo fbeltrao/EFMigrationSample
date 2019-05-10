@@ -27,10 +27,19 @@ namespace Tests
             return new CompanyDbContext(builder.Options);
         }
 
+        [OneTimeSetUp]
+        public void SetupDatabase()
+        {
+            var builder = new DbContextOptionsBuilder<CompanyDbContext>();
+            builder.UseCompanySqlServer(connectionString);
+
+            var dbContext = new CompanyDbContext(builder.Options);
+            dbContext.Database.Migrate();
+        }
+
         [Test]
         public async Task When_Creating_Should_Write_To_Db_And_Return()
-        {
-            
+        {            
             var request = new CreateCompanyRequest()
             {
                 Name = "Company-Test-01"

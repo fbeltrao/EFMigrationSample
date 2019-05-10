@@ -18,6 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\BizLogic\BizLogic.csproj" />
+    <ProjectReference Include="..\..\src\DbUpdate\DbUpdate.csproj" />
   </ItemGroup>
 
   <ItemGroup>
