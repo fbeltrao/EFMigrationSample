@@ -30,11 +30,14 @@ namespace Tests
         [OneTimeSetUp]
         public void SetupDatabase()
         {
+            Console.WriteLine($"Starting database setup for {connectionString}...");
             var builder = new DbContextOptionsBuilder<CompanyDbContext>();
             builder.UseCompanySqlServer(connectionString);
 
             var dbContext = new CompanyDbContext(builder.Options);
+            Console.WriteLine($"Starting migration for {connectionString}...");
             dbContext.Database.Migrate();
+            Console.WriteLine($"Migration for {connectionString} done!");
         }
 
         [Test]
