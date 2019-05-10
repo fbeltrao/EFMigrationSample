@@ -22,6 +22,7 @@ namespace BizLogic.IntegrationTests
         public async Task SetupDatabase()
         {
             var endpoint = Environment.GetEnvironmentVariable("CosmosDbEmulatorEndpoint");
+            Console.WriteLine($"Checking Configuration: CosmosDbEmulatorEndpoint='{endpoint}'");
             if (string.IsNullOrWhiteSpace(endpoint))
                 endpoint = ConfigurationManager.AppSettings["CosmosDbEndpoint"];
 
