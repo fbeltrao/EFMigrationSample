@@ -23,7 +23,8 @@ namespace Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var connectionString = Configuration.GetValue<string>("connectionString");
+            // var connectionString = Configuration.GetValue<string>("connectionString");
+            var connectionString = Configuration.GetConnectionString("sql");
             if (string.IsNullOrWhiteSpace(connectionString))
             {
                 connectionString = "Server=(localdb)\\mssqllocaldb;Database=Companies;Trusted_Connection=True;";

@@ -16,7 +16,7 @@ namespace BizLogic.IntegrationTests
 
         public CreateCompanyRequestTest()
         {
-            connectionString = ConfigurationManager.AppSettings["connectionString"];
+            connectionString = ConfigurationManager.ConnectionStrings["sql"].ConnectionString;
         }
         
         CompanyDbContext CreateDbContext()
