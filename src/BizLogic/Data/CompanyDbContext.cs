@@ -13,7 +13,7 @@ namespace BizLogic.Data
         {
         }
 
-        public DbSet<Employee> Vehicles { get; set; }
+        public DbSet<Employee> Employees { get; set; }
 
         public DbSet<Company> Companies { get; set; }
 

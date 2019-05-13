@@ -45,7 +45,7 @@ namespace DbUpdate.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("Vehicles");
+                    b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("BizLogic.Model.Employee", b =>
