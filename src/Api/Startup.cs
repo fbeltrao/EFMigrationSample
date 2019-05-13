@@ -23,7 +23,6 @@ namespace Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            // var connectionString = Configuration.GetValue<string>("connectionString");
             var connectionString = Configuration.GetConnectionString("sql");
             if (string.IsNullOrWhiteSpace(connectionString))
             {
