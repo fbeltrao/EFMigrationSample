@@ -33,6 +33,10 @@ namespace BizLogic.Data
         {
             builder.HasMany(f => f.Employees);
             builder.HasIndex(f => f.Name).HasName("ix_company_name");
+            builder.Property<string>(p => p.Description)
+                .IsRequired(true)
+                .HasDefaultValue("")
+                .HasMaxLength(200);
         }
     }
 
