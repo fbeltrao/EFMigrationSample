@@ -31,12 +31,17 @@ namespace BizLogic.Data
     {
         public void Configure(EntityTypeBuilder<Company> builder)
         {
-            builder.HasMany(f => f.Employees);
-            builder.HasIndex(f => f.Name).HasName("ix_company_name");
-            builder.Property<string>(p => p.Description)
+            builder.HasMany(c => c.Employees);
+            builder.HasIndex(c => c.Name).HasName("ix_company_name");
+            builder.Property<string>(c => c.Description)
                 .IsRequired(true)
                 .HasDefaultValue("")
                 .HasMaxLength(200);
+
+            builder.Property(c => c.City)
+                .IsRequired()
+                .HasDefaultValue("")
+                .HasMaxLength(100);
         }
     }
 

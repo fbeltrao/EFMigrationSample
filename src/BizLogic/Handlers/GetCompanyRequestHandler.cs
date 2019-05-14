@@ -29,6 +29,8 @@ namespace BizLogic.Handlers
             {
                 CompanyId = company?.CompanyId ?? Guid.Empty,
                 Name = company?.Name,
+                Description = company.Description,
+                City = company.City,
             };
         }
     }

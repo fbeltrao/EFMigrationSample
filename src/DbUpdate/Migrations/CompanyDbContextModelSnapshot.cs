@@ -24,6 +24,12 @@ namespace DbUpdate.Migrations
                     b.Property<Guid>("CompanyId")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(100)
+                        .HasDefaultValue("");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
