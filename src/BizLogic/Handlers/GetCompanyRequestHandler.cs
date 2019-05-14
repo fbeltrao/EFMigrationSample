@@ -31,6 +31,7 @@ namespace BizLogic.Handlers
                 Name = company?.Name,
                 Description = company.Description,
                 City = company.City,
+                Address = company.Address
             };
         }
     }

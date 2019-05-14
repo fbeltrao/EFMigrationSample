@@ -42,6 +42,11 @@ namespace BizLogic.Data
                 .IsRequired()
                 .HasDefaultValue("")
                 .HasMaxLength(100);
+
+            builder.Property(c => c.Address)
+                .IsRequired()
+                .HasDefaultValue("")
+                .HasMaxLength(400);
         }
     }
 

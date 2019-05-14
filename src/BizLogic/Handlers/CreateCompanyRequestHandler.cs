@@ -27,6 +27,7 @@ namespace BizLogic.Handlers
                 Name = request.Name,
                 Description = request.Description,
                 City = request.City,
+                Address = request.Address
             };
 
             dbContext.Companies.Add(company);
