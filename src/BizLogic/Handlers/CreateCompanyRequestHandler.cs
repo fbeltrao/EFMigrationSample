@@ -24,7 +24,8 @@ namespace BizLogic.Handlers
             var company = new Company
             {
                 CompanyId = request.Id ?? Guid.NewGuid(),
-                Name = request.Name
+                Name = request.Name,
+                Description = request.Description
             };
 
             dbContext.Companies.Add(company);
@@ -33,7 +34,8 @@ namespace BizLogic.Handlers
             return new CreateCompanyResponse
             {
                 CompanyId = company.CompanyId,
-                Name = company.Name
+                Name = company.Name,
+                Description = company.Description
             };
         }
     }
